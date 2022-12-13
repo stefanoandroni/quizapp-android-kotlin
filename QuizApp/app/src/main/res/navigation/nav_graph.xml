@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/quizListFragment">
+
+    <fragment
+        android:id="@+id/quizListFragment"
+        android:name="com.example.quizapp.ui.QuizListFragment"
+        android:label="fragment_quiz_list"
+        tools:layout="@layout/fragment_quiz_list" >
+        <action
+            android:id="@+id/action_quizListFragment_to_quizDetailFragment"
+            app:destination="@id/quizDetailFragment"
+            app:enterAnim="@android:anim/fade_in" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizDetailFragment"
+        android:name="com.example.quizapp.ui.QuizDetailFragment"
+        android:label="fragment_quiz_detail"
+        tools:layout="@layout/fragment_quiz_detail" >
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <action
+            android:id="@+id/action_quizDetailFragment_to_questionFragment"
+            app:destination="@id/questionFragment"
+            app:enterAnim="@android:anim/fade_in" />
+    </fragment>
+    <fragment
+        android:id="@+id/questionFragment"
+        android:name="com.example.quizapp.ui.QuestionFragment"
+        android:label="QuestionFragment" >
+        <action
+            android:id="@+id/action_questionFragment_to_quizResultFragment"
+            app:destination="@id/quizResultFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:popUpTo="@id/quizDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizResultFragment"
+        android:name="com.example.quizapp.ui.QuizResultFragment"
+        android:label="fragment_quiz_result"
+        tools:layout="@layout/fragment_quiz_result" >
+        <action
+            android:id="@+id/action_quizResultFragment_to_quizListFragment"
+            app:destination="@id/quizListFragment"
+            app:popUpTo="@id/quizListFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_quizResultFragment_to_quizDetailFragment"
+            app:destination="@id/quizDetailFragment"
+            app:popUpTo="@id/quizListFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+</navigation>

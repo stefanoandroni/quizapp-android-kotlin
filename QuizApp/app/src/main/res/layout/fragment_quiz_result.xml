@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.QuizResultFragment">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.quizapp.model.QuizViewModel" />
+
+        <variable
+            name="quizResultFragment"
+            type="com.example.quizapp.ui.QuizResultFragment" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="0dp">
+
+                    <ImageView
+                        android:id="@+id/quiz_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:layout_margin="0dp"
+                        android:scaleType="centerCrop"
+                        android:src="@{quizResultFragment.getResources().getDrawable(viewModel.quiz.imageResourceId)}"
+                        app:srcCompat="@drawable/quiz_1" />
+
+                    <TextView
+                        android:id="@+id/quiz_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:gravity="center"
+                        android:text="@{viewModel.quiz.title}"
+                        android:textAppearance="?attr/textAppearanceHeadline4"
+                        tools:text="My quiz title" />
+
+                    <TextView
+                        android:id="@+id/quiz_description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:gravity="center"
+                        android:text="@{viewModel.quiz.description}"
+                        android:textAppearance="?attr/textAppearanceSubtitle1"
+                        tools:text="My quiz description" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/category_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/category"
+                            android:textAppearance="?attr/textAppearanceCaption" />
+
+                        <TextView
+                            android:id="@+id/quiz_category"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{viewModel.quiz.category.toString()}"
+                            android:textAppearance="?attr/textAppearanceBody1"
+                            tools:text="SPORT" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/difficulty_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/difficulty"
+                            android:textAppearance="?attr/textAppearanceCaption" />
+
+                        <TextView
+                            android:id="@+id/quiz_difficulty"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{viewModel.quiz.difficulty.toString()}"
+                            android:textAppearance="?attr/textAppearanceBody1"
+                            tools:text="EASY" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/score_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/score"
+                            android:textAppearance="?attr/textAppearanceCaption" />
+
+                        <TextView
+                            android:id="@+id/quiz_score"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?attr/textAppearanceHeadline5"
+                            tools:text="7/10" />
+
+                    </LinearLayout>
+
+
+                    <Button
+                        android:id="@+id/quiz_share"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="8dp"
+                        android:onClick="@{() -> quizResultFragment.shareResult()}"
+                        android:text="@string/share_result" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <Button
+                android:id="@+id/quiz_restart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="?colorSecondary"
+                android:onClick="@{() -> quizResultFragment.restartQuiz()}"
+                android:text="@string/restart" />
+
+            <Button
+                android:id="@+id/quiz_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="?colorSecondary"
+                android:onClick="@{() -> quizResultFragment.goToHome()}"
+                android:text="@string/home" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>
