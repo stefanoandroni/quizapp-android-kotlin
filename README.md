@@ -6,7 +6,7 @@
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Kotlin_logo_2021.svg/768px-Kotlin_logo_2021.svg.png" alt="kotlin" height="50"/>
 </a>
 
-<p>A simple quizzes android app in <b>Kotlin</b>.</p>
+<p>A simple quiz android app in <b>Kotlin</b>.</p>
 
 <br>
 <img src="images/sample.gif" width="20%"/>
