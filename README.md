@@ -9,7 +9,7 @@
 <p>A simple quiz android app in <b>Kotlin</b>.</p>
 
 <br>
-<img src="images/sample.gif" width="300"/>
+<img src="images/sample.gif" alt="gif" width="300"/>
 
 <h1> Some features </h1>
 
@@ -26,4 +26,10 @@
   <li>Implicit Intent</li>
   <li>String Resources (Quantity strings (Plurals), Formatting strings)
   <li>Material Design 2</li>
+</ul>
+
+<h2> TODO </h2>
+<ul>
+    <li><b>local unit test</b> </li>
+    <li><b>instrumented test</b> </li>
 </ul>
