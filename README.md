@@ -9,4 +9,21 @@
 <p>A simple quiz android app in <b>Kotlin</b>.</p>
 
 <br>
-<img src="images/sample.gif" width="20%"/>
+<img src="images/sample.gif" width="300"/>
+
+<h1> Some features </h1>
+
+(Android Jetpack)
+<br>
+<ul>
+  <li>Activity/Fragment</li>
+  <li>RecyclerView (Adapter + ViewHolder)</li>
+  <li>Data Binding (View Binding)</li>
+  <li>ViewModel (shared ViewModel across fragments)</li>
+  <li>LiveData</li>
+  <li>Navigation Component (safeargs)</li>
+  <li>Back stack</li>
+  <li>Implicit Intent</li>
+  <li>String Resources (Quantity strings (Plurals), Formatting strings)
+  <li>Material Design 2</li>
+</ul>
